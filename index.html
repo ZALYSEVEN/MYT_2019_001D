@@ -76,8 +76,8 @@
                 </div>
             </div>
             <!-- fun，首页header end -->
-            <!-- cart，首页header -->
-            <div class="header_content cart">
+            <!-- partner，首页header -->
+            <div class="header_content partner"><!--cart 替换为partner-->
                 <!-- zaly9002为商务伙伴增加联系人按钮 -->
                 <div class="btn_left" tapmode="tap-active" onclick="openCommon('msg','消息盒子')"> <!-- zaly9002 需要创建联系人页面替代"消息盒子"页面 -->
                     <img src="./res/img/tm_ic_feed_me.png" alt="商务伙伴" class="toMsg">
@@ -92,27 +92,13 @@
                     <img src="./res/img/tm_mytmall_icon_message.png" alt="搜索" class="toMsg">
                 </div>
                  <!-- zaly9002 end -->
-                 <!-- zaly9002 以下增加tab页面分供应商和客户
-                <div id="navBar_fun">
-                    <span class="navBar_btn active" onclick="jumpToCart(0);" tapmode="tap-active">
-                        客户
-                    </span>
-                    <span class="navBar_btn" onclick="jumpToCart(1);" tapmode="tap-active">
-                        供应商
-                    </span>
-                    <span class="navBar_bar">
-                        <div class="navBar_bar_inner"></div>
-                    </span>
-                </div>
--->
-                 <!-- zaly9002 增加tab end -->
 
             </div>
             <!-- cart，首页header end -->
 
 
             <!-- index页5种header:::home,featured,fun,cart,profile -->
-            <!-- zaly9002 此处将替换header:::market,discovery,finance,contact,profile -->
+            <!-- zaly9002 此处将替换header:::market,discovery,finance,partner,profile -->
         </div>
 
         <div id="main">
@@ -130,7 +116,7 @@
                 <li class="list_li fun" onclick="changeIndexFrame(2);" tapmode="tap-active">
                     <span class="text">金融助力</span> <!-- zaly9002 此处将"范儿"替换为"金融助力" -->
                 </li>
-                <li class="list_li cart" onclick="changeIndexFrame(3);" tapmode="tap-active">
+                <li class="list_li partner" onclick="changeIndexFrame(3);" tapmode="tap-active"><!--cart 替换为partner-->
                     <span class="text">商务伙伴</span>  <!-- zaly9002 此处将"购物车"替换为"商务伙伴" -->
                 </li>
                 <li class="list_li profile" onclick="changeIndexFrame(4);" tapmode="tap-active">
@@ -179,21 +165,10 @@
     }
 
     //增加以下函数在商务伙伴页
-/*    var navBarCart = $api.dom('#navBar_cart');
-    var aNavBarBtn = $api.domAll('#navBar_fun .navBar_btn');
-    var navBarBar = $api.dom('#navBar_fun .navBar_bar');
-    var setNavBarBtn = function(index){
-        $api.addCls(aNavBarBtn[index],'active');
-        navBarBar.style.webkitTransform = 'translateX('+index*100+'%)';
-        for (var i = 0; i < 2; i++) {
-            if (i != index) {
-                $api.removeCls(aNavBarBtn[i],'active');
-            }
-        }
-    };*/
-    var jumpToCart = function(index){
+
+    var jumpToPartner = function(index){//<!--cart 替换为partner-->
         api.setFrameGroupIndex ({
-            name: 'cart',
+            name: 'partner',//<!--cart 替换为partner-->
             index: index,
             scroll: true
         });
@@ -205,7 +180,7 @@
         '0': 'home',
         '1': 'featured',
         '2': 'fun',
-        '3': 'cart',
+        '3': 'partner',//<!--cart 替换为partner-->
         '4': 'profile'
     };
     var changeIndexFrame = function(index){
@@ -377,26 +352,26 @@
                     frames:
                     [{
                         name: 'funrecommend',
-                        url: './html/main/funrecommend.html',
+                        url: './html/main/fortune.html',
                         pageParam:{},
                         bounces:true,
                         opaque:true,
                         bgColor: '#EEEEF0'
                     },{
                         name: 'funvideo',
-                        url: './html/main/funvideo.html',
+                        url: './html/main/credit.html',
                         pageParam:{},
                         bounces:true,
                         opaque:true,
                         bgColor: '#EEEEF0'
                     },{
                         name: 'funtopic',
-                        url: './html/main/funtopic.html',
+                        url: './html/main/insurance.html',
                         pageParam:{},
                         bounces:true,
                         opaque:true,
                         bgColor: '#EEEEF0'
-                    }/*,{
+                    }/*,{//zaly9002 取消最后一个选项页
                         name: 'funfollow',
                         url: './html/main/funfollow.html',
                         pageParam:{},
@@ -424,17 +399,41 @@
                         }
                     });
                 } else{
-                    api.openFrame({
-                        name: frameJson[index],
-                        url: './html/main/'+frameJson[index]+'.html',
-                        bounces: true,
-                        rect: {
-                            x: 0,
-                            y: headerPos.h,
-                            w: 'auto',
-                            h: mainPos.h
-                        }
-                    });
+                    //zaly9002将商务伙伴页转到类视频页
+                    if (index == 3){
+                        api.openFrame({
+                            name: frameJson[index],
+                            url: './html/main/partner.html',
+                            bounces: false,
+                            rect: {
+                                x: 0,
+                                y: headerPos.h,
+                                w: 'auto',
+                                h: mainPos.h
+                            },
+                            pageParam: {
+                                name: 'test'
+                            },
+                            bounces: true,
+                            bgColor: 'rgba(0,0,0,0)',
+                            vScrollBarEnabled: true,
+                            hScrollBarEnabled: true
+                        });
+                    } else {
+                        api.openFrame({
+                            name: frameJson[index],
+                            url: './html/main/'+frameJson[index]+'.html',
+                            bounces: true,
+                            rect: {
+                                x: 0,
+                                y: headerPos.h,
+                                w: 'auto',
+                                h: mainPos.h
+                            }
+                        });
+                    }
+                    //尝试结束
+
                 }
 
             }

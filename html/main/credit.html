@@ -6,6 +6,7 @@
     <title>APP</title>
     <link rel="stylesheet" type="text/css" href="../../css/api.css" />
     <link rel="stylesheet" type="text/css" href="../../css/common.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/profile.css" />
     <style>
     #main{
         padding: 0;
@@ -13,7 +14,7 @@
 
 /*导航栏4个按钮*/
     #nav_top{
-        padding-top: 250px;
+        padding-top: 170px;
         margin: 0 0.6em 1em 0.6em;
     }
     #nav_top .nav_top_list{
@@ -23,9 +24,11 @@
 
     #nav_top .nav_top_li{
         background-color: #EEEEF0;
-        border-radius: 3px;
+        border-radius: 5px;
         float: left;
         width: 25%;
+        margin-top: 20px;
+        margin-bottom: 5px;
     }
     #nav_top .nav_top_li:active,#nav_top .nav_top_li.tap-active{
         background-color: #999999;
@@ -308,55 +311,110 @@
 <body>
     <div id="wrap">
         <div id="main">
-            <!-- 轮播图 -->
-            <div id='slider' class='swipe'>
-                <div class='swipe-wrap'>
-                    <div class="swipe-box" tapmode="tap-active" data-url="http://h5.m.taobao.com/channel/act/other/newbook.php" data-title="新书" onclick="toDetail(this);">
-                        <img src="../../image/home_index_ad_1.png" alt="全球知名大牌特卖汇">
+            <div id="container">
+                <!-- 上方汇总信息栏 -->
+                <div class="profile_box">
+                    <div class="profile_top ta">
+                        <i class="qrcode-icon" tapmode="tap-active" onclick=""></i>
+                        <img src="../../image/index_img_i1_icon.png" alt="" class="user-icon">
+                        <span class="user-box">
+                            <i class="user-gender female"></i>
+                            <span class="user-name">刘小娜</span>
+                        </span>
                     </div>
-                    <div class="swipe-box" tapmode="tap-active" data-url="http://h5.m.taobao.com/channel/act/other/newbook.php" data-title="新书" onclick="toDetail(this);">
-                        <img src="../../image/home_index_ad_2.png" alt="君御灯饰特惠日！">
-                    </div>
-                    <div class="swipe-box" tapmode="tap-active" data-url="http://h5.m.taobao.com/channel/act/other/newbook.php" data-title="新书" onclick="toDetail(this);">
-                        <img src="../../image/home_index_ad_3.png" alt="宇宙最萌面膜专场">
+                    <div class="tabBar-ta">
+                        <div class="tabBar_inner" tapmode="tap-active">
+                            <span class="follow">信用额度:40000</span>
+                        </div>
+                        <div class="tabBar_inner" tapmode="tap-active">
+                            <span class="funs">本期要还:345</span>
+                        </div>
+                        <!--zaly9002 取消关注按钮
+                        <div class="tabBar_inner last" tapmode="tap-active">
+                            <span class="follow-icon followed"></span>
+                        </div>
+                      -->
                     </div>
                 </div>
-                <div id="title-box">
-                    <!-- <span id="title-box-text">
-                        一周电影推荐《移动迷宫》
-                    </span> -->
-                    <ul id="title-box-ul">
-                        <li class="active"></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
+                <p class="my-intro">
+                  更多信用额度，更快方框就在蜜柚通
+                </p>
+                <!-- 上方汇总信息栏 end-->
+            </div>
+            <div id="container" class=>
+                <!-- 轮播图 -->
+                <div id='slider' class='swipe'>
+                    <div class='swipe-wrap'>
+                        <div class="swipe-box" tapmode="tap-active" data-url="http://h5.m.taobao.com/channel/act/other/newbook.php" data-title="新书" onclick="toDetail(this);">
+                            <img src="../../image/credit_index_ad_1.png" alt="全球">
+                        </div>
+                        <div class="swipe-box" tapmode="tap-active" data-url="http://h5.m.taobao.com/channel/act/other/newbook.php" data-title="新书" onclick="toDetail(this);">
+                            <img src="../../image/credit_index_ad_2.png" alt="君御">
+                        </div>
+                        <div class="swipe-box" tapmode="tap-active" data-url="http://h5.m.taobao.com/channel/act/other/newbook.php" data-title="新书" onclick="toDetail(this);">
+                            <img src="../../image/credit_index_ad_3.png" alt="宇宙">
+                        </div>
+                        <div class="swipe-box" tapmode="tap-active" data-url="http://h5.m.taobao.com/channel/act/other/newbook.php" data-title="新书" onclick="toDetail(this);">
+                            <img src="../../image/credit_index_ad_4.png" alt="狂欢">
+                        </div>
+                    </div>
+                    <div id="title-box">
+                        <!-- <span id="title-box-text">
+                            一周电影推荐《移动迷宫》
+                        </span> -->
+                        <ul id="title-box-ul">
+                            <li class="active"></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- 轮播图 end -->
+                <!-- 上方导航栏 -->
+                <div id="nav_top">
+                    <ul class="nav_top_list">
+                        <li class="nav_top_li score" tapmode="tap-active" data-url="http://ju.taobao.com/m/jusp/juhuasuantm/mtp.htm" data-title="聚划算" onclick="toDetail(this);">
+                            <i class="icon"></i>
+                            <span class="text">免押租赁</span>
+                        </li>
+                        <li class="nav_top_li recharge" tapmode="tap-active" data-url="http://ju.taobao.com/m/jusp/juhuasuantm/mtp.htm" data-title="聚划算" onclick="toDetail(this);">
+                            <i class="icon"></i>
+                            <span class="text">消费分期</span>
+                        </li>
+                        <li class="nav_top_li lottery" tapmode="tap-active" data-url="http://ju.taobao.com/m/jusp/juhuasuantm/mtp.htm" data-title="聚划算" onclick="toDetail(this);">
+                            <i class="icon"></i>
+                            <span class="text">优先免息</span>
+                        </li>
+                        <li class="nav_top_li ju" tapmode="tap-active" data-url="http://ju.taobao.com/m/jusp/juhuasuantm/mtp.htm" data-title="聚划算" onclick="toDetail(this);">
+                            <i class="icon"></i>
+                            <span class="text">链上信用</span>
+                        </li>
                     </ul>
+                    <!-- zaly9002增加为8个按钮 -->
+                    <ul class="nav_top_list">
+                        <li class="nav_top_li score" tapmode="tap-active" data-url="http://ju.taobao.com/m/jusp/juhuasuantm/mtp.htm" data-title="聚划算" onclick="toDetail(this);">
+                            <i class="icon"></i>
+                            <span class="text">惠农补贴</span>
+                        </li>
+                        <li class="nav_top_li recharge" tapmode="tap-active" data-url="http://ju.taobao.com/m/jusp/juhuasuantm/mtp.htm" data-title="聚划算" onclick="toDetail(this);">
+                            <i class="icon"></i>
+                            <span class="text">房屋抵押</span>
+                        </li>
+                        <li class="nav_top_li lottery" tapmode="tap-active" data-url="http://ju.taobao.com/m/jusp/juhuasuantm/mtp.htm" data-title="聚划算" onclick="toDetail(this);">
+                            <i class="icon"></i>
+                            <span class="text">汽车抵押</span>
+                        </li>
+                        <li class="nav_top_li ju" tapmode="tap-active" data-url="http://ju.taobao.com/m/jusp/juhuasuantm/mtp.htm" data-title="柚链" onclick="toDetail(this);">
+                            <i class="icon"></i>
+                            <span class="text">产业链</span>
+                        </li>
+                    </ul>
+                    <!-- zaly9002增加为8个按钮 end-->
                 </div>
+                <!-- 上方导航栏 end-->
             </div>
-            <!-- 轮播图 end -->
-            <!-- 上方导航栏 -->
-            <div id="nav_top">
-                <ul class="nav_top_list">
-                    <li class="nav_top_li score" tapmode="tap-active" data-url="http://ju.taobao.com/m/jusp/juhuasuantm/mtp.htm" data-title="聚划算" onclick="toDetail(this);">
-                        <i class="icon"></i>
-                        <span class="text">领积分</span>
-                    </li>
-                    <li class="nav_top_li recharge" tapmode="tap-active" data-url="http://ju.taobao.com/m/jusp/juhuasuantm/mtp.htm" data-title="聚划算" onclick="toDetail(this);">
-                        <i class="icon"></i>
-                        <span class="text">充值</span>
-                    </li>
-                    <li class="nav_top_li lottery" tapmode="tap-active" data-url="http://ju.taobao.com/m/jusp/juhuasuantm/mtp.htm" data-title="柚链" onclick="toDetail(this);">
-                        <i class="icon"></i>
-                        <span class="text">彩票</span>
-                    </li>
-                    <li class="nav_top_li ju" tapmode="tap-active" data-url="http://ju.taobao.com/m/jusp/juhuasuantm/mtp.htm" data-title="柚链" onclick="toDetail(this);">
-                        <i class="icon"></i>
-                        <span class="text">柚链</span>
-                    </li>
-                </ul>
-            </div>
-            <!-- 上方导航栏 end-->
             <!-- 下方详情 -->
             <div class="container">
                 <div class="headlines sp1_3" tapmode="tap-active" data-url="http://m.tmall.com/channel/act/315/tmall-headlines_2014/11/19.php" data-title="蜜柚通头条" onclick="toDetail(this);">

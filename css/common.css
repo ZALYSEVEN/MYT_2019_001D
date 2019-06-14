@@ -295,8 +295,8 @@ html,body{
 }
     /*fun end*/
 
-    /*cart*/
-#header.cart .cart{
+    /*cart 替换为partner*/
+#header.partner .partner{/*cart 替换为partner*/
     display: -webkit-box;
     display: -webkit-flex;
     display: flex;
@@ -304,7 +304,7 @@ html,body{
     background-size: 100% 100%;
 }
 /*zaly9002 增加定义cart 的btn_left，btn_right和toCart*/
-#header .cart .btn_left{
+#header .partner .btn_left{/*cart 替换为partner*/
     position: absolute;
     width: 54px;
     height: 48px;
@@ -313,7 +313,7 @@ html,body{
     background: url(../res/img/tmall_bar_segmentation.png) right center no-repeat;
     background-size: 1px 27px;
 }
-#header .cart .toCart{
+#header .partner .toPartner{/*cart 替换为partner*/
     display: block;
     width: 28px;
     position: absolute;
@@ -322,7 +322,7 @@ html,body{
     -webkit-transform: translate(-50%,-50%);
             transform: translate(-50%,-50%);
 }
-#header .cart .btn_middle{
+#header .partner .btn_middle{/*cart 替换为partner*/
     height: 48px;
     line-height: 48px;
     position: absolute;
@@ -333,7 +333,7 @@ html,body{
     -webkit-transform: translateX(-50%);
             transform: translateX(-50%);
 }
-#header .cart .btn_right{
+#header .partner .btn_right{/*cart 替换为partner*/
     position: absolute;
     width: 54px;
     height: 48px;
@@ -342,11 +342,11 @@ html,body{
     background: url(../res/img/tmall_bar_segmentation.png) left center no-repeat;
     background-size: 1px 27px;
 }
-#header .cart .btn_right:active,#header .cart .btn_right.tap-active{
+#header .partner .btn_right:active,#header .partner .btn_right.tap-active{/*cart 替换为partner*/
     background: #BD0E0E url(../res/img/tmall_bar_segmentation.png) left center no-repeat;
     background-size: 1px 27px;
 }
-#header .cart .toMsg{
+#header .partner .toMsg{/*cart 替换为partner*/
     display: block;
     width: 27px;
     position: absolute;
@@ -355,47 +355,7 @@ html,body{
     -webkit-transform: translate(-50%,-50%);
             transform: translate(-50%,-50%);
 }
-/*
-#navBar_fun{
-    background-color: #FFF;
-    position: absolute;
-    top: 48px;
-    left: 0;
-    width: 100%;
-    height: 48px;
-}
-#navBar_fun .navBar_btn{
-    float: left;
-    width: 33%;
-    height: 48px;
-    font-size: 16px;
-    color: #AFAFAF;
-    line-height: 48px;
-}
-#navBar_fun .navBar_btn.active{
-    color: #BE3030;
-}
-#navBar_fun .navBar_bar{
-    position: absolute;
-    bottom: 0;
-    left: 0%;
-    height: 3px;
-    width: 33%;
-    -webkit-transform: translateX(0%);
-            transform: translateX(0%);
-    -webkit-transition: all .25s ease;
-            transition: all .25s ease;
-}
-#navBar_fun .navBar_bar .navBar_bar_inner{
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    height: 3px;
-    width: 80%;
-    background-color: #BE3030;
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
-}*/
+
 /*zaly9002 增加定义cart 的btn_left，btn_right和toCart等 end*/
     /*cart end*/
     /*profile*/
@@ -440,43 +400,43 @@ html,body{
             transform: translateX(-50%);
 }
 #footer_list .home{
-    background: url(../res/img/icon_tab_home_nomal.png) center 6px no-repeat;
-    background-size: 22px 21px;
-}
-#footer_list .home.active{
-    background: url(../res/img/icon_tab_home_selected.png) center 6px no-repeat;
-    background-size: 22px 21px;
-}
-#footer_list .follow{
-    background: url(../res/img/icon_tab_featured_normal.png) center 6px no-repeat;
-    background-size: 22px 21px;
-}
-#footer_list .follow.active{
-    background: url(../res/img/icon_tab_featured_selected.png) center 6px no-repeat;
-    background-size: 22px 21px;
-}
-#footer_list .fun{
-    background: url(../res/img/icon_tab_fun_normal.png) center 6px no-repeat;
-    background-size: 26px 21px;
-}
-#footer_list .fun.active{
-    background: url(../res/img/icon_tab_fun_selected.png) center 6px no-repeat;
-    background-size: 26px 21px;
-}
-#footer_list .cart{
     background: url(../res/img/icon_tab_cart_normal.png) center 6px no-repeat;
     background-size: 22px 21px;
 }
-#footer_list .cart.active{
+#footer_list .home.active{
     background: url(../res/img/icon_tab_cart_selected.png) center 6px no-repeat;
     background-size: 22px 21px;
 }
-#footer_list .profile{
+#footer_list .follow{
+    background: url(../res/img/icon_tab_fun_normal.png) center 6px no-repeat;
+    background-size: 22px 21px;
+}
+#footer_list .follow.active{
+    background: url(../res/img/icon_tab_fun_selected.png) center 6px no-repeat;
+    background-size: 22px 21px;
+}
+#footer_list .fun{
+    background: url(../res/img/icon_tab_home_normal.png) center 6px no-repeat;
+    background-size: 26px 21px;
+}
+#footer_list .fun.active{
+    background: url(../res/img/icon_tab_home_selected.png) center 6px no-repeat;
+    background-size: 26px 21px;
+}
+#footer_list .partner{/*cart 替换为partner*/
     background: url(../res/img/icon_tab_featured_normal.png) center 6px no-repeat;
     background-size: 22px 21px;
 }
-#footer_list .profile.active{
+#footer_list .partner.active{/*cart 替换为partner*/
     background: url(../res/img/icon_tab_featured_selected.png) center 6px no-repeat;
+    background-size: 22px 21px;
+}
+#footer_list .profile{
+    background: url(../res/img/icon_tab_profile_normal.png) center 6px no-repeat;
+    background-size: 22px 21px;
+}
+#footer_list .profile.active{
+    background: url(../res/img/icon_tab_profile_selected.png) center 6px no-repeat;
     background-size: 22px 21px;
 }
 #footer_list .list_li .text{
@@ -493,8 +453,6 @@ html,body{
     color: #444F59;
 }
 /*主页footer end*/
-
-
 
 
 /* common响应 */
@@ -524,63 +482,66 @@ html,body{
 
 
 /*轮播图*/
-    .swipe {
-        overflow: hidden;
-        position: absolute;
-        width: 100%;
-        left: 0;
-        top: 0;
-    }
-    .swipe-wrap {
-        overflow: hidden;
-        position: relative;
-    }
-    .swipe-wrap .swipe-box {
-        float: left;
-        width: 100%;
-        position: relative;
-    }
-    .swipe-wrap img {
-        width: 100%;
-        display: block;
-    }
-    #title-box {
-        height: 30px;
-        width: 100%;
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        /*background-color: rgba(0,0,0,0.3);*/
-    }
-    #title-box-text {
-        color: #FFF;
-        text-align: left;
-        text-indent: 1em;
-        line-height: 30px;
-    }
-    #title-box-ul {
-        position: absolute;
-        right: 0;
-        top: 0;
-        padding-right: 12px;
-        font-size: 1em;
-    }
-    #title-box-ul li.active {
-        background: url(../res/img/slider_dot_current.png) transparent center center no-repeat;
-        background-size: 8px 8px;
-    }
-    #title-box-ul li {
-        width: 11px;
-        height: 30px;
-        line-height: 30px;
-        float: left;
-        background: url(../res/img/slider_dot.png) transparent center center no-repeat;
-        background-size: 8px 8px;
-    }
+.swipe {
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+/*zaly9002: 使用container，不必指定位置
+    left: 0;
+    top: 0;
 
-    .hidden{
-        display: none !important;
-    }
+*/
+}
+.swipe-wrap {
+    overflow: hidden;
+    position: relative;
+}
+.swipe-wrap .swipe-box {
+    float: left;
+    width: 100%;
+    position: relative;
+}
+.swipe-wrap img {
+    width: 100%;
+    display: block;
+}
+#title-box {
+    height: 30px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    /*background-color: rgba(0,0,0,0.3);*/
+}
+#title-box-text {
+    color: #FFF;
+    text-align: left;
+    text-indent: 1em;
+    line-height: 30px;
+}
+#title-box-ul {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding-right: 12px;
+    font-size: 1em;
+}
+#title-box-ul li.active {
+    background: url(../res/img/slider_dot_current.png) transparent center center no-repeat;
+    background-size: 8px 8px;
+}
+#title-box-ul li {
+    width: 11px;
+    height: 30px;
+    line-height: 30px;
+    float: left;
+    background: url(../res/img/slider_dot.png) transparent center center no-repeat;
+    background-size: 8px 8px;
+}
+
+.hidden{
+    display: inline-block !important;
+}
 /*轮播图 end*/
 /* common响应 end */
 textarea:focus, input:focus{
