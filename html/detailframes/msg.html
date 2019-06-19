@@ -41,34 +41,88 @@
             background: #7F0000 url(../../res/img/webview_dividing.png) right center no-repeat;
             background-size: 1px 100%;
         }
+
+        .btn_box.pull-left1{
+          float: left;
+          width: 33%;
+          height: 48px;
+          font-size: 16px;
+          color: #AFAFAF;
+
+        }
+
+        .navBar_bar .navBar_bar_inner{
+            position: absolute;
+            bottom: 0;
+            left: 65%;
+            height: 3px;
+            width: 60%;
+            background-color: #BE3030;
+            -webkit-transform: translateX(-50%);
+                    transform: translateX(-50%);
+        }
     </style>
 </head>
 <body>
-    <div id="wrap">
-        <div id="header">
+        <nav id="header">
             <div class="btn_box pull-left" tapmode="tap-active" onclick="api.closeWin();">
                 <img src="../../res/img/tmall_btn_bar_back.png" alt="">
             </div>
-            <h5></h5>
-        </div>
-        <div id="main"> 
-            
+            <div class="btn_box pull-left1" onclick="jumpToFun1(0);" tapmode="tap-active">
+                客户 <!-- zaly9002 此处将"推荐"替换为"财富" -->
+            </div>
+            <div class="btn_box pull-left1" onclick="jumpToFun1(1);" tapmode="tap-active">
+                供应商 <!-- zaly9002 此处将"推荐"替换为"财富" -->
+            </div>
+          
+
+        </nav>
+        <div id="main">
+
         </div>
 
-    </div>
 </body>
 <script type="text/javascript" src="../../script/api.js"></script>
 <script type="text/javascript">
 
+var jumpToFun1 = function(index){
+    api.setFrameGroupIndex ({
+        name: 'header1',
+        index: index,
+        scroll: true
+    });
+}
     apiready = function(){
-        var header = $api.byId('header');
-        $api.fixStatusBar(header); 
+     var header = $api.byId('header');
+        $api.fixStatusBar(header);
         var headerPos = $api.offset(header);
         var main = $api.byId('main');
         var mainPos = $api.offset(main);
         var name = api.pageParam.name;
         var title = api.pageParam.title;
-        $api.dom('#header h5').innerHTML = title;
+
+      /*  var navBarBar = $api.dom('#header .navBar_bar');
+        var setNavBarBtn = function(index){
+            $api.addCls(aNavBarBtn[index],'active');
+            navBarBar.style.webkitTransform = 'translateX('+index*100+'%)';
+            for (var i = 0; i < 2; i++) {
+                if (i != index) {
+                    $api.removeCls(aNavBarBtn[i],'active');
+                }
+            }
+        };*/
+
+
+      var menus=$api.domAll(header,'.btn_box pull-left1');
+      var frames=[];
+      for (var i=0;i<2;i++) {
+        frames.push({
+           name: 'fortune' + i,
+          url: './msg-con'+i+'.html',
+            });
+      }
+
+        /*   $api.dom('#header h5').innerHTML = title;
         var url = './'+name+'-con.html'
         api.openFrame({
             name: name,
@@ -79,7 +133,29 @@
                 w: 'auto',
                 h: mainPos.h
             }
-        });  
+        });*/
+
+       //$api.setStorage('headerIndex',0);
+        //window.openIndexFrames = function(index){
+          //  var headerIndex = $api.getStorage('headerIndex');
+        api.openFrameGroup ({
+            name: 'header1',
+            scrollEnabled: true,
+            rect: {
+                x: 0,
+                y: headerPos.h,
+
+                w: 'auto',
+                h:'auto'
+            },
+            index: 0,
+            frames:frames
+
+
+          })
+
     }
 </script>
+
+
 </html>
