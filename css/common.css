@@ -400,43 +400,53 @@ html,body{
             transform: translateX(-50%);
 }
 #footer_list .home{
-    background: url(../res/img/icon_tab_cart_normal.png) center 6px no-repeat;
+    background: url(../res/img/icon_tab_business_normal.png) center 6px no-repeat;
+	<!-- zaly9004 此处将"icon_tab_cart_normal.png"替换为"icon_tab_business_normal.png" -->
     background-size: 22px 21px;
 }
 #footer_list .home.active{
-    background: url(../res/img/icon_tab_cart_selected.png) center 6px no-repeat;
+    background: url(../res/img/icon_tab_business_selected.png) center 6px no-repeat;
+	<!-- zaly9004 此处将"icon_tab_cart_selected.png"替换为"icon_tab_business_selected.png" -->
     background-size: 22px 21px;
 }
 #footer_list .follow{
-    background: url(../res/img/icon_tab_fun_normal.png) center 6px no-repeat;
+    background: url(../res/img/icon_tab_find_normal.png) center 6px no-repeat;
+	<!-- zaly9004 此处将"icon_tab_fun_normal.png"替换为"icon_tab_find_normal.png" -->
     background-size: 22px 21px;
 }
 #footer_list .follow.active{
-    background: url(../res/img/icon_tab_fun_selected.png) center 6px no-repeat;
+    background: url(../res/img/icon_tab_find_selected.png) center 6px no-repeat;
+	<!-- zaly9004 此处将"icon_tab_fun_selected.png"替换为"icon_tab_find_selected.png" -->
     background-size: 22px 21px;
 }
 #footer_list .fun{
-    background: url(../res/img/icon_tab_home_normal.png) center 6px no-repeat;
+    background: url(../res/img/icon_tab_aid_normal.png) center 6px no-repeat;
+	<!-- zaly9004 此处将"icon_tab_home_normal.png"替换为"icon_tab_aid_normal.png" -->
     background-size: 26px 21px;
 }
 #footer_list .fun.active{
-    background: url(../res/img/icon_tab_home_selected.png) center 6px no-repeat;
+    background: url(../res/img/icon_tab_aid_selected.png) center 6px no-repeat;
+	<!-- zaly9004 此处将"icon_tab_home_selected.png"替换为"icon_tab_aid_selected.png" -->
     background-size: 26px 21px;
 }
 #footer_list .partner{/*cart 替换为partner*/
-    background: url(../res/img/icon_tab_featured_normal.png) center 6px no-repeat;
+    background: url(../res/img/icon_tab_partner_normal.png) center 6px no-repeat;
+	<!-- zaly9004 此处将"icon_tab_featured_normal.png"替换为"icon_tab_partner_normal.png" -->
     background-size: 22px 21px;
 }
 #footer_list .partner.active{/*cart 替换为partner*/
-    background: url(../res/img/icon_tab_featured_selected.png) center 6px no-repeat;
+    background: url(../res/img/icon_tab_partner_selected.png) center 6px no-repeat;
+	<!-- zaly9004 此处将"icon_tab_featured_selected.png"替换为"icon_tab_partner_selected.png" -->
     background-size: 22px 21px;
 }
 #footer_list .profile{
-    background: url(../res/img/icon_tab_profile_normal.png) center 6px no-repeat;
+    background: url(../res/img/icon_tab_i_normal.png) center 6px no-repeat;
+	<!-- zaly9004 此处将"icon_tab_profile_normal.png"替换为"icon_tab_i_normal.png" -->
     background-size: 22px 21px;
 }
 #footer_list .profile.active{
-    background: url(../res/img/icon_tab_profile_selected.png) center 6px no-repeat;
+    background: url(../res/img/icon_tab_i_selected.png) center 6px no-repeat;
+	<!-- zaly9004 此处将"icon_tab_profile_selected.png"替换为"icon_tab_i_selected.png" -->
     background-size: 22px 21px;
 }
 #footer_list .list_li .text{
