@@ -31,10 +31,11 @@
             <div class="header_content featured">
                 <a class="btn_middle" onclick="openFeaturedFrame();" tapmode="tap-active">
                     <span>行情品类</span>
-                    <i class="middle_arr down"></i>
+                    <i class="middle_arr down" onclick="openFeaturedFrame();" tapmode="middle_arr up"></i>
                 </a>
                 <div class="btn_right" tapmode="tap-active" onclick="openCommon('broadcast','Laneige/兰芝')">
-                    <img src="./res/img/tm_brand_index_follow_icon.png" alt="发现" class="follow"> <!-- zaly9002 此处将"关注"替换为"发现" -->
+                    <span class="text" text-align="left">报行情</span><!-- zaly9002 此处增加右侧按钮说明-->
+                    <img src="./res/img/tm_brand_index_follow_icon_new.png" alt="发现" class="follow"> <!-- zaly9002 此处将"关注"替换为"发现" -->
                 </div>
             </div>
             <!-- featured，首页header end -->
