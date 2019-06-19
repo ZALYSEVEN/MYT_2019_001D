@@ -30,7 +30,7 @@
             <!-- featured，首页header -->
             <div class="header_content featured">
                 <a class="btn_middle" onclick="openFeaturedFrame();" tapmode="tap-active">
-                    <span>发现</span>
+                    <span>行情品类</span>
                     <i class="middle_arr down"></i>
                 </a>
                 <div class="btn_right" tapmode="tap-active" onclick="openCommon('broadcast','Laneige/兰芝')">
@@ -354,21 +354,21 @@
                         name: 'funrecommend',
                         url: './html/main/fortune.html',
                         pageParam:{},
-                        bounces:true,
+                        bounces:false,
                         opaque:true,
                         bgColor: '#EEEEF0'
                     },{
                         name: 'funvideo',
                         url: './html/main/credit.html',
                         pageParam:{},
-                        bounces:true,
+                        bounces:false,
                         opaque:true,
                         bgColor: '#EEEEF0'
                     },{
                         name: 'funtopic',
                         url: './html/main/insurance.html',
                         pageParam:{},
-                        bounces:true,
+                        bounces:false,
                         opaque:true,
                         bgColor: '#EEEEF0'
                     }/*,{//zaly9002 取消最后一个选项页
@@ -390,7 +390,7 @@
                     api.openFrame({
                         name: frameJson[index],
                         url: './html/main/'+frameJson[index]+'.html',
-                        bounces: true,
+                        bounces: false,
                         rect: {
                             x: 0,
                             y: $api.offset(header).h,
@@ -404,7 +404,7 @@
                         api.openFrame({
                             name: frameJson[index],
                             url: './html/main/partner.html',
-                            bounces: false,
+                            bounces: true,
                             rect: {
                                 x: 0,
                                 y: headerPos.h,
@@ -423,7 +423,7 @@
                         api.openFrame({
                             name: frameJson[index],
                             url: './html/main/'+frameJson[index]+'.html',
-                            bounces: true,
+                            bounces: false,
                             rect: {
                                 x: 0,
                                 y: headerPos.h,
