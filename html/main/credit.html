@@ -12,7 +12,7 @@
         padding: 0;
     }
 
-/*导航栏8个按钮*/<!-- zaly9004将4个替换为8个-->
+/*导航栏4个按钮*/
     #nav_top{
         padding-top: 170px;
         margin: 0 0.6em 1em 0.6em;
@@ -46,41 +46,23 @@
         width: 1.5em;
         height: 1.5em;
     }
-    #nav_top .rent .icon{
-        background: url(../../res/img/index_icon_free_rent.png) center center no-repeat;
-        background-size: 100% 100%;
-    }/*<!-- zaly9004将index_icon_score替换为index_icon_free_rent-->*/
-    #nav_top .installment .icon{
-        background: url(../../res/img/index_icon_installment.png) center center no-repeat;
-        background-size: 100% 100%;
-    }/*<!-- zaly9004将index_icon_recharge替换为index_icon_installment-->*/
-    #nav_top .interest .icon{
-        background: url(../../res/img/index_icon_interest_free.png) center center no-repeat;
-        background-size: 100% 100%;
-    }/*<!-- zaly9004将ndex_icon_lottery替换为index_icon_interest_free-->*/
-    #nav_top .credit .icon{
-        background: url(../../res/img/index_icon_credit_chain.png) center center no-repeat;
-        background-size: 100% 100%;
-    }/*<!-- zaly9004将index_icon_ju替换为index_icon_credit_chain-->*/
-	/*<!-- zaly9004新增四个icon-->*/
-    #nav_top .subsidy .icon{
-        background: url(../../res/img/index_icon_subsidy.png) center center no-repeat;
+    #nav_top .score .icon{
+        background: url(../../res/img/index_icon_score.png) center center no-repeat;
         background-size: 100% 100%;
     }
-    #nav_top .houseloan .icon{
-        background: url(../../res/img/index_icon_house_loan.png) center center no-repeat;
+    #nav_top .recharge .icon{
+        background: url(../../res/img/index_icon_recharge.png) center center no-repeat;
         background-size: 100% 100%;
     }
-    #nav_top .carloan .icon{
-        background: url(../../res/img/index_icon_car_loan.png) center center no-repeat;
+    #nav_top .lottery .icon{
+        background: url(../../res/img/index_icon_lottery.png) center center no-repeat;
         background-size: 100% 100%;
     }
-    #nav_top .chain .icon{
-        background: url(../../res/img/index_icon_industry_chain.png) center center no-repeat;
+    #nav_top .ju .icon{
+        background: url(../../res/img/index_icon_ju.png) center center no-repeat;
         background-size: 100% 100%;
     }
 /*导航栏4个按钮 end*/
-/*<!-- zaly9004更改8个按钮对应icon name-->*/
 /* home页具体内容 */
     .headlines{
         width: 100%;
@@ -393,44 +375,43 @@
                 <!-- 上方导航栏 -->
                 <div id="nav_top">
                     <ul class="nav_top_list">
-                        <li class="nav_top_li rent" tapmode="tap-active" data-url="http://ju.taobao.com/m/jusp/juhuasuantm/mtp.htm" data-title="聚划算" onclick="toDetail(this);">
+                        <li class="nav_top_li score" tapmode="tap-active" data-url="http://ju.taobao.com/m/jusp/juhuasuantm/mtp.htm" data-title="聚划算" onclick="toDetail(this);">
                             <i class="icon"></i>
                             <span class="text">免押租赁</span>
                         </li>
-                        <li class="nav_top_li installment" tapmode="tap-active" data-url="http://ju.taobao.com/m/jusp/juhuasuantm/mtp.htm" data-title="聚划算" onclick="toDetail(this);">
+                        <li class="nav_top_li recharge" tapmode="tap-active" data-url="http://ju.taobao.com/m/jusp/juhuasuantm/mtp.htm" data-title="聚划算" onclick="toDetail(this);">
                             <i class="icon"></i>
                             <span class="text">消费分期</span>
                         </li>
-                        <li class="nav_top_li interest" tapmode="tap-active" data-url="http://ju.taobao.com/m/jusp/juhuasuantm/mtp.htm" data-title="聚划算" onclick="toDetail(this);">
+                        <li class="nav_top_li lottery" tapmode="tap-active" data-url="http://ju.taobao.com/m/jusp/juhuasuantm/mtp.htm" data-title="聚划算" onclick="toDetail(this);">
                             <i class="icon"></i>
                             <span class="text">优先免息</span>
                         </li>
-                        <li class="nav_top_li credit" tapmode="tap-active" data-url="http://ju.taobao.com/m/jusp/juhuasuantm/mtp.htm" data-title="聚划算" onclick="toDetail(this);">
+                        <li class="nav_top_li ju" tapmode="tap-active" data-url="http://ju.taobao.com/m/jusp/juhuasuantm/mtp.htm" data-title="聚划算" onclick="toDetail(this);">
                             <i class="icon"></i>
                             <span class="text">链上信用</span>
                         </li>
                     </ul>
                     <!-- zaly9002增加为8个按钮 -->
                     <ul class="nav_top_list">
-                        <li class="nav_top_li subsidy" tapmode="tap-active" data-url="http://ju.taobao.com/m/jusp/juhuasuantm/mtp.htm" data-title="聚划算" onclick="toDetail(this);">
+                        <li class="nav_top_li score" tapmode="tap-active" data-url="http://ju.taobao.com/m/jusp/juhuasuantm/mtp.htm" data-title="聚划算" onclick="toDetail(this);">
                             <i class="icon"></i>
                             <span class="text">惠农补贴</span>
                         </li>
-                        <li class="nav_top_li houseloan" tapmode="tap-active" data-url="http://ju.taobao.com/m/jusp/juhuasuantm/mtp.htm" data-title="聚划算" onclick="toDetail(this);">
+                        <li class="nav_top_li recharge" tapmode="tap-active" data-url="http://ju.taobao.com/m/jusp/juhuasuantm/mtp.htm" data-title="聚划算" onclick="toDetail(this);">
                             <i class="icon"></i>
                             <span class="text">房屋抵押</span>
                         </li>
-                        <li class="nav_top_li carloan" tapmode="tap-active" data-url="http://ju.taobao.com/m/jusp/juhuasuantm/mtp.htm" data-title="聚划算" onclick="toDetail(this);">
+                        <li class="nav_top_li lottery" tapmode="tap-active" data-url="http://ju.taobao.com/m/jusp/juhuasuantm/mtp.htm" data-title="聚划算" onclick="toDetail(this);">
                             <i class="icon"></i>
                             <span class="text">汽车抵押</span>
                         </li>
-                        <li class="nav_top_li chain" tapmode="tap-active" data-url="http://ju.taobao.com/m/jusp/juhuasuantm/mtp.htm" data-title="柚链" onclick="toDetail(this);">
+                        <li class="nav_top_li ju" tapmode="tap-active" data-url="http://ju.taobao.com/m/jusp/juhuasuantm/mtp.htm" data-title="柚链" onclick="toDetail(this);">
                             <i class="icon"></i>
                             <span class="text">产业链</span>
                         </li>
                     </ul>
                     <!-- zaly9002增加为8个按钮 end-->
-					<!-- zaly9004更改8个按钮对应icon name end-->
                 </div>
                 <!-- 上方导航栏 end-->
             </div>
