@@ -1,0 +1,167 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <title>APP</title>
+    <link rel="stylesheet" type="text/css" href="../../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/common.css" />
+    <style>
+        #header{
+            text-align: center;
+        }
+        #header h5{
+            display: inline-block;
+            color: #FFF;
+            line-height: 48px;
+            width: 100%;
+            position: absolute;
+            left: 0;
+        }
+        .btn_box{
+            width: 52px;
+            height: 48px;
+            position: relative;
+        }
+        .btn_box img{
+            width: 23px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            -webkit-transform: translate(-50%,-50%);
+                    transform: translate(-50%,-50%);
+        }
+        .btn_box.pull-left{
+            background: url(../../res/img/webview_dividing.png) right center no-repeat;
+            background-size: 1px 100%;
+            position: relative;
+            z-index: 1;
+        }
+        .btn_box.pull-right{
+            background: url(../../res/img/webview_dividing.png) left center no-repeat;
+            background-size: 1px 100%;
+            position: relative;
+            z-index: 1;
+        }
+        .btn_box.pull-left:active,.btn_box.pull-left.tap-active{
+            background: #7F0000 url(../../res/img/webview_dividing.png) right center no-repeat;
+            background-size: 1px 100%;
+        }
+
+        .btn_box.pull-left1{
+          float: left;
+          width: 70%;
+          height: 48px;
+          font-size: 16px;
+          color: #AFAFAF;
+          line-height: 48px;
+        }
+
+        .navBar_bar .navBar_bar_inner{
+            position: absolute;
+            bottom: 0;
+            left: 65%;
+            height: 3px;
+            width: 60%;
+            background-color: #BE3030;
+            -webkit-transform: translateX(-50%);
+                    transform: translateX(-50%);
+        }
+    </style>
+</head>
+<body>
+        <nav id="header">
+            <div class="btn_box pull-left" tapmode="tap-active" onclick="api.closeWin();">
+                <img src="../../res/img/tmall_btn_bar_back.png" alt="">
+            </div>
+            <div class="btn_box pull-left1" onclick="jumpToFun1(1);" tapmode="tap-active">
+                联系人 <!-- zaly9002 此处将"推荐"替换为"财富" -->
+            </div>
+            <div class="btn_box pull-right" tapmode="tap-active" onclick="api.closeWin();">
+                <img src="../../res/img/tmall_icon_search.png" alt="">
+            </div>
+
+
+        </nav>
+        <div id="main">
+
+        </div>
+
+</body>
+<script type="text/javascript" src="../../script/api.js"></script>
+<script type="text/javascript">
+
+var jumpToFun1 = function(index){
+    api.setFrameGroupIndex ({
+        name: 'header1',
+        index: index,
+        scroll: true
+    });
+}
+    apiready = function(){
+     var header = $api.byId('header');
+        $api.fixStatusBar(header);
+        var headerPos = $api.offset(header);
+        var main = $api.byId('main');
+        var mainPos = $api.offset(main);
+        var name = api.pageParam.name;
+        var title = api.pageParam.title;
+
+      /*  var navBarBar = $api.dom('#header .navBar_bar');
+        var setNavBarBtn = function(index){
+            $api.addCls(aNavBarBtn[index],'active');
+            navBarBar.style.webkitTransform = 'translateX('+index*100+'%)';
+            for (var i = 0; i < 2; i++) {
+                if (i != index) {
+                    $api.removeCls(aNavBarBtn[i],'active');
+                }
+            }
+        };*/
+
+
+      var menus=$api.domAll(header,'.btn_box pull-left1');
+      var frames=[];
+      for (var i=0;i<2;i++) {
+        frames.push({
+           name: 'fortune' + i,
+          url: './msg-con'+i+'.html',
+            });
+      }
+
+        /*   $api.dom('#header h5').innerHTML = title;
+        var url = './'+name+'-con.html'
+        api.openFrame({
+            name: name,
+            url: url,
+            rect: {
+                x: 0,
+                y: headerPos.h,
+                w: 'auto',
+                h: mainPos.h
+            }
+        });*/
+
+       //$api.setStorage('headerIndex',0);
+        //window.openIndexFrames = function(index){
+          //  var headerIndex = $api.getStorage('headerIndex');
+        api.openFrameGroup ({
+            name: 'header1',
+            scrollEnabled: true,
+            rect: {
+                x: 0,
+                y: headerPos.h,
+
+                w: 'auto',
+                h:'auto'
+            },
+            index: 0,
+            frames:frames
+
+
+          })
+
+    }
+</script>
+
+
+</html>
