@@ -51,9 +51,11 @@
                     金融助力 <!-- zaly9002 此处将"范儿"替换为"金融助力" -->
                     <!-- <i class="middle_arr down"></i> -->
                 </a>
+                <!-- zaly9002 去掉右上角按钮
                 <div class="btn_right" tapmode="tap-active" onclick="openCommon('msg','消息盒子')">
                     <img src="./res/img/tm_mytmall_icon_message.png" alt="消息" class="toMsg">
                 </div>
+                -->
                 <div id="navBar_fun">
                     <span class="navBar_btn active" onclick="jumpToFun(0);" tapmode="tap-active">
                         财富 <!-- zaly9002 此处将"推荐"替换为"财富" -->
@@ -89,7 +91,7 @@
                     <!-- <i class="middle_arr down"></i> -->
                 </a>
                  <!-- zaly9002 以下增加右按钮搜索功能 -->
-                <div class="btn_right" tapmode="tap-active" onclick="openCommon('msg-con','消息盒子')"> <!-- 打开msg-con zaly9007 -->
+                <div class="btn_right" tapmode="tap-active" onclick="openChatFrame()"> <!-- 打开msg-con zaly9007 -->
                     <img src="./res/img/tm_mytmall_icon_message.png" alt="搜索" class="toMsg">
                 </div>
                  <!-- zaly9002 end -->
@@ -315,7 +317,31 @@
         });
     };
     // 打开分享浮动窗口 end
+    // 打开聊天消息列表
+    var openChatFrame = function(){
+        api.openFrame({
+            name: 'chatframe',
+            url: './html/detailframes/messageCenter.html',
+            bounces: true,
+            opaque: false,
+            bgColor: '#fff',
+            rect: {
+                x: 0,
+                y: $api.offset(header).h,
+                w: 'auto',
+                h: $api.offset(main).h
+            },
+            pageParam: {
+                name: 'chatframe'
 
+            },
+            bounces: false,
+            bgColor: 'rgba(0,0,0,0)',
+            vScrollBarEnabled: true,
+            hScrollBarEnabled: true
+        });
+    }
+    // 打开聊天消息列表end
     apiready = function(){
 
         // 阻止首页弹动
