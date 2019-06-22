@@ -6,9 +6,25 @@
     <title>APP</title>
     <link rel="stylesheet" type="text/css" href="../../css/api.css" />
     <link rel="stylesheet" type="text/css" href="../../css/common.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/fun.css" />
     <style>
         #main{
-
+            padding: 0;
+        }
+        .container .title{
+            color: #58616D;
+            width: 100%;
+            display: block;
+            font-size: 20px;
+            text-align: center;
+        }
+        .container .brief{
+            text-indent: 13px;
+            font-size: 0.7em;
+            color: #BDBDBD;
+            width: 100%;
+            margin: 6px 0 3px 0;
+            display: block;
         }
         .broadcast{
             border: #CDCDCD 1px solid;
@@ -237,11 +253,168 @@
             line-height: 39px;
             text-align: center;
         }
+        .count_down{
+            background-color: #FFF;
+            margin-top: 0.75em;
+            margin-bottom: 0.75em;
+        }
+        .count_down:after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        .count_down .left{
+            float: left;
+            width: 33%;
+            padding-top: 1em;
+        }
+        .count_down .center{
+            float: left;
+            width: 33%;
+        }
+        .count_down .center img{
+            width: 100%;
+            display: block;
+        }
+        .count_down .right{
+            float: left;
+            width: 33%;
+            padding-top: 1.5em;
+        }
+        .count_down .right .title{
+            font-size: 0.7em;
+            color: #58616D;
+            display: block;
+        }
+
+        #counting_box{
+            padding-left: 13px;
+        }
+        #counting_box li{
+            float: left;
+            font-size: 0.7em;
+        }
+        #counting_box .t{
+            background-color: #333333;
+            border-radius: 2px;
+            color: #FFF;
+            width: 0.75em;
+            height: 1.3em;
+            line-height: 1.4em;
+            text-align: center;
+            margin-right: 1px;
+            text-decoration: line-through;
+        }
+        /*导航栏4个按钮*/
+        #nav_top{
+            padding-top: 10px;
+            margin: 0 0.6em 1em 0.6em;
+        }
+        #nav_top .nav_top_list{
+            background-color: #EEEEF0;
+            overflow: hidden;
+        }
+
+        #nav_top .nav_top_li{
+            background-color: #EEEEF0;
+            border-radius: 5px;
+            float: left;
+            width: 25%;
+            margin-top: 20px;
+            margin-bottom: 5px;
+        }
+        #nav_top .nav_top_li:active,#nav_top .nav_top_li.tap-active{
+            background-color: #999999;
+        }
+        #nav_top .text{
+            float: left;
+            text-indent: 6px;
+            color: #58616D;
+            font-size: 0.75em;
+            line-height: 2em;
+        }
+        #nav_top .nav_top_li .icon{
+            float: left;
+            margin-left: 7px;
+            width: 1.5em;
+            height: 1.5em;
+        }
+        #nav_top .score .icon{
+            background: url(../../res/img/index_icon_score.png) center center no-repeat;
+            background-size: 100% 100%;
+        }
+        #nav_top .recharge .icon{
+            background: url(../../res/img/index_icon_recharge.png) center center no-repeat;
+            background-size: 100% 100%;
+        }
+        #nav_top .lottery .icon{
+            background: url(../../res/img/index_icon_lottery.png) center center no-repeat;
+            background-size: 100% 100%;
+        }
+        #nav_top .ju .icon{
+            background: url(../../res/img/index_icon_ju.png) center center no-repeat;
+            background-size: 100% 100%;
+        }
+        /*导航栏4个按钮 end*/
     </style>
 </head>
 <body>
     <div id="wrap">
         <div id="main">
+
+            <!--zaly9002增加上方导航栏和大广告 -->
+            <div class="container">
+                <span class="title">热门行情推荐</span>
+                <!-- 上方导航栏 -->
+                <div id="nav_top">
+                    <ul class="nav_top_list">
+                        <li class="nav_top_li score" tapmode="tap-active" data-url="http://ju.taobao.com/m/jusp/juhuasuantm/mtp.htm" data-title="聚划算" onclick="toDetail(this);">
+                            <i class="icon"></i>
+                            <span class="text">白柚</span>
+                        </li>
+                        <li class="nav_top_li recharge" tapmode="tap-active" data-url="http://ju.taobao.com/m/jusp/juhuasuantm/mtp.htm" data-title="聚划算" onclick="toDetail(this);">
+                            <i class="icon"></i>
+                            <span class="text">金柚</span>
+                        </li>
+                        <li class="nav_top_li lottery" tapmode="tap-active" data-url="http://ju.taobao.com/m/jusp/juhuasuantm/mtp.htm" data-title="柚链" onclick="toDetail(this);">
+                            <i class="icon"></i>
+                            <span class="text">三红柚</span>
+                        </li>
+                        <li class="nav_top_li ju" tapmode="tap-active" data-url="http://ju.taobao.com/m/jusp/juhuasuantm/mtp.htm" data-title="柚链" onclick="toDetail(this);">
+                            <i class="icon"></i>
+                            <span class="text">3号化肥</span>
+                        </li>
+                    </ul>
+                </div>
+                <!-- 上方导航栏 end-->
+                <!--中间大广告-->
+                <div class="count_down sp1" tapmode="tap-active" data-url="http://page.m.tmall.com/myy/myy_cjy.html" data-title="喵一眼" onclick="toDetail(this);">
+                    <div class="left">
+                        <span class="title">限时发货</span>
+                        <span class="brief">距离成熟发货时间还剩</span>
+                        <ul id="counting_box" class="clearfix">
+                            <li class="h1 t">0</li>
+                            <li class="h2 t">0</li>
+                            <li class="colon">:</li>
+                            <li class="m1 t">2</li>
+                            <li class="m2 t">5</li>
+                            <li class="colon">:</li>
+                            <li class="s1 t">0</li>
+                            <li class="s2 t">0</li>
+                        </ul>
+                    </div>
+                    <div class="left">
+                        <img src="../../image/featured_count_down.png" alt="">
+                    </div>
+                    <div class="right">
+                        <span class="title" class="right">欧盟定制三白柚  精品尾货</span>
+                        <span class="brief">迅速订购锁定价格</span>
+                    </div>
+                </div>
+                <!--中间大广告end-->
+            </div>
+            <!--增加上方导航栏和大广告 end-->
+
             <!-- 小广播部分 -->
             <div class="broadcast" tapmode="tap-active" onclick="openCommon('broadcast','Laneige/兰芝')">
                 <div class="broadcast_header clearfix">
@@ -262,7 +435,7 @@
                                 <img src="../../res/img/tm_brand_view_card_dot_1.png" alt="">
                             </div>
                             <p class="text">
-                                LANEGE在法语中是自然之“雪”的意思，代表用不干涸的自信。20年以来作为全球女性认可的补水保湿专家！
+                                琯溪蜜柚属亚热带常绿小乔木果树，花芽在9—12月份，3月中下旬初为绐花，盛花期为4月中旬前后，10月下旬果实成熟。
                             </p>
                             <div class="right_quotes">
                                 <img src="../../res/img/tm_brand_view_card_dot_2.png" alt="">
@@ -420,7 +593,7 @@
                     <span class="type new">上新啦</span>
                 </div>
                 <div class="new_pro_content_box clearfix">
-                    <img src="../../image/cherry_np1.png" alt=""> 
+                    <img src="../../image/cherry_np1.png" alt="">
                 </div>
                 <div class="new_pro_shop clearfix">
                     <span>进入官方旗舰店</span>

@@ -85,25 +85,26 @@
 </head>
 <body>
     <div id="wrap">
-        <div id="main"> 
+        <div id="main">
             <ul class="list_box clearfix">
                 <li class="active l t">全部</li>
                 <li class="r t">新品</li>
                 <li class="l m">优惠</li>
-                <li class="r m">专享</li>
-                <li class="l b">专题</li>
-                <li class="r b">小广播</li>
+                <li class="r m">电商专享</li>
+                <li class="l b">当季最红</li>
+                <li class="r b">欧盟定制</li>
             </ul>
         </div>
         <div class="shadow" tapmode="tap-active" onclick="api.closeFrame({name:'featured_frame'});"></div>
     </div>
 </body>
 <script type="text/javascript" src="../../script/api.js"></script>
+<script type="text/javascript" src="../../script/common.js"></script>
 <script type="text/javascript">
     apiready = function(){
         // var h = api.pageParam.h;
         var header = $api.byId('header');
-        $api.fixStatusBar(header); 
+        $api.fixStatusBar(header);
     }
 </script>
 </html>

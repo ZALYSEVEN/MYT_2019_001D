@@ -37,6 +37,12 @@
             position: relative;
             z-index: 1;
         }
+        .btn_box.pull-right{
+            background: url(../../res/img/webview_dividing.png) left center no-repeat;
+            background-size: 1px 100%;
+            position: relative;
+            z-index: 1;
+        }
         .btn_box.pull-left:active,.btn_box.pull-left.tap-active{
             background: #7F0000 url(../../res/img/webview_dividing.png) right center no-repeat;
             background-size: 1px 100%;
@@ -44,32 +50,20 @@
 
         .btn_box.pull-left1{
           float: left;
-          width: 33%;
+          width: 70%;
           height: 48px;
           font-size: 16px;
           color: #AFAFAF;
           line-height: 48px;
         }
 
-        #header .navBar_bar{
+        .navBar_bar .navBar_bar_inner{
             position: absolute;
             bottom: 0;
-            left: 20%;
+            left: 65%;
             height: 3px;
-            width: 20%;
-            -webkit-transform: translateX(0%);
-                    transform: translateX(0%);
-            -webkit-transition: all .25s ease;
-                    transition: all .25s ease;
-
-        }
-        #header .navBar_bar .navBar_bar_inner{
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            height: 100%;
-            width: 80%;
-            background-color: #C50000;
+            width: 60%;
+            background-color: #BE3030;
             -webkit-transform: translateX(-50%);
                     transform: translateX(-50%);
         }
@@ -80,15 +74,14 @@
             <div class="btn_box pull-left" tapmode="tap-active" onclick="api.closeWin();">
                 <img src="../../res/img/tmall_btn_bar_back.png" alt="">
             </div>
-            <div class="btn_box pull-left1" onclick="jumpToFun1(0);" tapmode="tap-active">
-                客户 <!-- zaly9002 此处将"推荐"替换为"财富" -->
-            </div>
             <div class="btn_box pull-left1" onclick="jumpToFun1(1);" tapmode="tap-active">
-                供应商 <!-- zaly9002 此处将"推荐"替换为"财富" -->
+                联系人 <!-- zaly9002 此处将"推荐"替换为"财富" -->
             </div>
-            <div class="navBar_bar">
-                <div class="navBar_bar_inner"></div>
+            <div class="btn_box pull-right" tapmode="tap-active" onclick="api.closeWin();">
+                <img src="../../res/img/tmall_icon_search.png" alt="">
             </div>
+
+
         </nav>
         <div id="main">
 
@@ -98,16 +91,13 @@
 <script type="text/javascript" src="../../script/api.js"></script>
 <script type="text/javascript">
 
-var navBarBar = $api.dom('#header .navBar_bar');
 var jumpToFun1 = function(index){
     api.setFrameGroupIndex ({
         name: 'header1',
         index: index,
         scroll: true
-        });
-    navBarBar.style.webkitTransform = 'translateX('+index*170+'%)';
-    }
-
+    });
+}
     apiready = function(){
      var header = $api.byId('header');
         $api.fixStatusBar(header);
@@ -127,7 +117,9 @@ var jumpToFun1 = function(index){
                 }
             }
         };*/
-      var menus=$api.domAll('#header .btn_box pull-left1');
+
+
+      var menus=$api.domAll(header,'.btn_box pull-left1');
       var frames=[];
       for (var i=0;i<2;i++) {
         frames.push({
@@ -158,6 +150,7 @@ var jumpToFun1 = function(index){
             rect: {
                 x: 0,
                 y: headerPos.h,
+
                 w: 'auto',
                 h:'auto'
             },
