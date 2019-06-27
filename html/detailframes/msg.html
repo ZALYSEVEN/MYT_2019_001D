@@ -86,11 +86,9 @@
             <div class="btn_box pull-left1" onclick="jumpToFun1(1);" tapmode="tap-active">
                 供应商 <!-- zaly9002 此处将"推荐"替换为"财富" -->
             </div>
-
             <div class="navBar_bar">
                 <div class="navBar_bar_inner"></div>
             </div>
-
         </nav>
         <div id="main">
 
@@ -106,11 +104,9 @@ var jumpToFun1 = function(index){
         name: 'header1',
         index: index,
         scroll: true
-    });
-
+        });
     navBarBar.style.webkitTransform = 'translateX('+index*170+'%)';
-
-      }
+    }
 
     apiready = function(){
      var header = $api.byId('header');
@@ -121,9 +117,16 @@ var jumpToFun1 = function(index){
         var name = api.pageParam.name;
         var title = api.pageParam.title;
 
-
-
-
+      /*  var navBarBar = $api.dom('#header .navBar_bar');
+        var setNavBarBtn = function(index){
+            $api.addCls(aNavBarBtn[index],'active');
+            navBarBar.style.webkitTransform = 'translateX('+index*100+'%)';
+            for (var i = 0; i < 2; i++) {
+                if (i != index) {
+                    $api.removeCls(aNavBarBtn[i],'active');
+                }
+            }
+        };*/
       var menus=$api.domAll('#header .btn_box pull-left1');
       var frames=[];
       for (var i=0;i<2;i++) {
@@ -133,14 +136,28 @@ var jumpToFun1 = function(index){
             });
       }
 
-    
+        /*   $api.dom('#header h5').innerHTML = title;
+        var url = './'+name+'-con.html'
+        api.openFrame({
+            name: name,
+            url: url,
+            rect: {
+                x: 0,
+                y: headerPos.h,
+                w: 'auto',
+                h: mainPos.h
+            }
+        });*/
+
+       //$api.setStorage('headerIndex',0);
+        //window.openIndexFrames = function(index){
+          //  var headerIndex = $api.getStorage('headerIndex');
         api.openFrameGroup ({
             name: 'header1',
             scrollEnabled: true,
             rect: {
                 x: 0,
                 y: headerPos.h,
-
                 w: 'auto',
                 h:'auto'
             },

@@ -1,0 +1,250 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <title>APP</title>
+    <link rel="stylesheet" type="text/css" href="../../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/common.css" />
+    <style>
+        #header{
+            text-align: center;
+        }
+        #header h5{
+            display: inline-block;
+            color: #FFF;
+            line-height: 48px;
+            width: 100%;
+            position: absolute;
+            left: 0;
+        }
+        .btn_box{
+            width: 52px;
+            height: 48px;
+            position: relative;
+        }
+        .btn_box img{
+            width: 23px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            -webkit-transform: translate(-50%,-50%);
+                    transform: translate(-50%,-50%);
+        }
+        .btn_box.pull-left{
+            background: url(../../res/img/webview_dividing.png) right center no-repeat;
+            background-size: 1px 100%;
+            position: relative;
+            z-index: 1;
+        }
+        .btn_box.pull-left:active,.btn_box.pull-left.tap-active{
+            background: #7F0000 url(../../res/img/webview_dividing.png) right center no-repeat;
+            background-size: 1px 100%;
+        }
+
+        .btn_box.pull-left1{
+          float: center;
+          width:85%;
+          height: 48px;
+          font-size: 20px;
+          color: #AFAFAF;
+          line-height: 48px;
+        }
+
+        #header .navBar_bar{
+            position: absolute;
+            bottom: 0;
+            left: 20%;
+            height: 3px;
+            width: 20%;
+            -webkit-transform: translateX(0%);
+                    transform: translateX(0%);
+            -webkit-transition: all .25s ease;
+                    transition: all .25s ease;
+
+        }
+        #header .navBar_bar .navBar_bar_inner{
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            height: 100%;
+            width: 80%;
+            background-color: #C50000;
+            -webkit-transform: translateX(-50%);
+                    transform: translateX(-50%);
+        }
+    </style>
+</head>
+<body>
+        <nav id="header">
+            <div class="btn_box pull-left" tapmode="tap-active" onclick="api.closeWin();">
+                <img src="../../res/img/tmall_btn_bar_back.png" alt="">
+            </div>
+            <div class="btn_box pull-left1"  tapmode="tap-active">
+                联系人 <!-- zaly9002 此处将"推荐"替换为"财富" -->
+            </div>
+
+            <div class="navBar_bar">
+                <div class="navBar_bar_inner"></div>
+            </div>
+        </nav>
+        <div id="main">
+
+        </div>
+
+</body>
+<script type="text/javascript" src="../../script/api.js"></script>
+<script type="text/javascript">
+
+var navBarBar = $api.dom('#header .navBar_bar');
+var jumpToFun1 = function(index){
+    api.setFrameGroupIndex ({
+        name: 'header1',
+        index: index,
+        scroll: true
+        });
+    navBarBar.style.webkitTransform = 'translateX('+index*170+'%)';
+    }
+
+    apiready = function(){
+     var header = $api.byId('header');
+        $api.fixStatusBar(header);
+        var headerPos = $api.offset(header);
+        var main = $api.byId('main');
+        var mainPos = $api.offset(main);
+        var name = api.pageParam.name;
+        var title = api.pageParam.title;
+
+        var listContact = api.require('listContact');
+        listContact.open({
+          x : 0,
+     y : 70,
+     w : api.frameWidth,
+     h : api.frameHeight - 100,
+
+
+  cellBgColor:'#FFF',
+  indicator: {
+        color: '#A1A1A1',
+        title: '备注'
+
+  },
+searchBar:{
+      bgColor:  '#A1A1A1',           //（可选项）搜索条背景色，字符串，默认透明，支持 rgb，rgba，#
+      cancelColor: '#A1A1A1' ,    //（可选项）取消文字的颜色，字符串类型，默认#A1A1A1,支持 rgb，rgba，#
+      placeholder: '搜索联系人' ,    //（可选项）搜索条提示文字，字符串类型，默认空，不传则不显示提示文字
+      h: 44,          //（可选项）搜索框的高度，数字类型，默认44
+      textFieldBgColor: '#A1A1A1' //（可选项）搜索框文本区域的背景色，字符串类型，支持rgb、rgba、#
+  },
+
+                            rightBtn: [{
+                                  color: '#8B0000',
+                                  title: '删除'
+
+                          }],
+                          data: {
+                                  common: [{
+                                    placeholderImg: 'widget://res/img/ic/listContact.png',
+              img: 'https://img1.3lian.com/gif/more/11/201206/a5194ba8c27b17def4a7c5495aba5e32.jpg',
+              title: '标题',
+              titleSize : 20,
+               titleLocation: 'center'
+
+                                  }],
+                                  A: [{
+                                    "id":"1",
+                                          //  "phoneName":"张笑",
+                                            "remark":"",
+                                            "phoneNumbers":["13663302288","13586734565"],
+                                            "phoneBookVersion":"1",
+                                            "status":"0",
+                                            "deviceCode":"000000000000",
+                                            "subTitle": "13663302288",
+
+                                          placeholderImg: 'widget://res/img/config_icon5.png',
+                                          title: '艾雪瑞'
+
+                                                       //（可选项）cell的子标题，为空时title上下居中显示
+
+                                  }, {
+                                    "remark":"",
+                                    "phoneNumbers":["13663302288","13586734565"],
+                                    "phoneBookVersion":"1",
+                                    "status":"0",
+                                    "deviceCode":"000000000000",
+                                    "subTitle": "13663302288",
+                                          placeholderImg: 'widget://res/img/config_icon6.png',
+
+                                          title: '安书奇'
+                                  }, {
+                                    "remark":"",
+                                    "phoneNumbers":["13663302288","13586734565"],
+                                    "phoneBookVersion":"1",
+                                    "status":"0",
+                                    "deviceCode":"000000000000",
+                                    "subTitle": "13663302288",
+                                          placeholderImg: 'widget://res/img/config_icon8.png',
+
+                                          title: '安阳'
+                                  }, {
+                                    "remark":"",
+                                    "phoneNumbers":["13663302288","13586734565"],
+                                    "phoneBookVersion":"1",
+                                    "status":"0",
+                                    "deviceCode":"000000000000",
+                                    "subTitle": "13663302288",
+                                          placeholderImg: 'widget://res/img/config_icon7.png',
+                                          title: '安莹'
+                                  }],
+                                  B: [{
+                                    "remark":"",
+                                    "phoneNumbers":["13663302288","13586734565"],
+                                    "phoneBookVersion":"1",
+                                    "status":"0",
+                                    "deviceCode":"000000000000",
+                                    "subTitle": "13663302288",
+                                          placeholderImg: 'widget://res/img/config_icon9.png',
+
+                                          title: '白冰'
+                                  }, {
+                                    "remark":"",
+                                    "phoneNumbers":["13663302288","13586734565"],
+                                    "phoneBookVersion":"1",
+                                    "status":"0",
+                                    "deviceCode":"000000000000",
+                                    "subTitle": "13663302288",
+                                          placeholderImg: 'widget://res/img/config_icon10.png',
+
+                                          title: '白大超'
+                                  }, {
+                                    "remark":"",
+                                    "phoneNumbers":["13663302288","13586734565"],
+                                    "phoneBookVersion":"1",
+                                    "status":"0",
+                                    "deviceCode":"000000000000",
+                                    "subTitle": "13663302288",
+                                          placeholderImg: 'widget://res/img/config_icon11.png',
+
+                                          title: '鲍峰雪'
+                                  }]
+                          },
+                          fixedOn: api.frameName,
+                          fixed: true
+                  }, function(ret, err) {
+                          if (ret) {
+                                  alert("111" + JSON.stringify(ret));
+
+                          } else {
+                                  alert(JSON.stringify(err));
+                          }
+                  });
+
+
+
+
+    }
+
+</script>
+
+
+</html>

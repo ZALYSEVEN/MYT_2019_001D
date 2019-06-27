@@ -50,6 +50,13 @@
 </head>
 <body>
     <div id="wrap">
+      <!-- 加入header 添加返回按钮 zaly9007 -->
+      <nav id="header">
+          <div class="btn_box pull-left" tapmode="tap-active" onclick="api.closeWin();">
+              <img src="../../res/img/tmall_btn_bar_back.png" alt="">
+          </div>
+      </nav>
+
         <div id="main">
             <div class="option" tapmode="tap-active" onclick="openCommon('login','登录');">
                 <div class="option-left">
@@ -57,12 +64,14 @@
                 </div>
                 <span class="text">蜜柚通推荐</span>
             </div>
+            <!-- 暂时删除范儿消息 zaly 9007
             <div class="option" tapmode="tap-active" onclick="openCommon('login','登录');">
                 <div class="option-left">
                     <img src="../../res/img/config_icon2.png" alt="">
                 </div>
                 <span class="text">范儿消息</span>
             </div>
+          -->
             <div class="option" tapmode="tap-active" onclick="openCommon('login','登录');">
                 <div class="option-left">
                     <img src="../../res/img/config_icon3.png" alt="">
