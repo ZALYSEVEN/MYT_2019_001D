@@ -2,7 +2,7 @@
     padding: 0;
 }
 .profile_box{
-    height: 182px;
+    height: 200px;
     width: 100%;
     background: url(../res/img/tm_bg_profile_banner_normal.png) center center no-repeat;
     background-size: 100% 100%;
@@ -48,9 +48,9 @@
 }
 .profile_top .config{
     position: absolute;
-    right: 24px;
-    color: #FFF;
-    bottom: 13px;
+    left: 24px;
+    color: #000;
+    top: 13px;
 }
 .profile_top .user-icon{
     position: absolute;
@@ -102,8 +102,15 @@
 
 
 .profile_box .tabBar-ta{
-    height: 42px;
+    height: 50px;
     width: 100%;
+}
+.tabBar .tabBar_head{
+  display: block;
+  font-size: 0.7em;
+  text-align: left;
+  margin-bottom: 0.7em;
+  color: #FFF;
 }
 .tabBar-ta .tabBar_inner{
     float: left;
