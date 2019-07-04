@@ -120,7 +120,7 @@ var jumpToFun1 = function(index){
           x : 0,
      y : 70,
      w : api.frameWidth,
-     h : api.frameHeight - 100,
+     h : api.frameHeight - 50,
 
 
   cellBgColor:'#FFF',
@@ -145,9 +145,9 @@ searchBar:{
                           data: {
                                   common: [{
                                     placeholderImg: 'widget://res/img/ic/listContact.png',
-              img: 'https://img1.3lian.com/gif/more/11/201206/a5194ba8c27b17def4a7c5495aba5e32.jpg',
-              title: '标题',
-              titleSize : 20,
+              img: 'widget://res/img/config_icon12.png',
+              title: '群聊',
+              titleSize : 16,
                titleLocation: 'center'
 
                                   }],
@@ -157,12 +157,17 @@ searchBar:{
                                             "remark":"",
                                             "phoneNumbers":["13663302288","13586734565"],
                                             "phoneBookVersion":"1",
+                                                       //（可选项）子标题在水平线上的位置center,left,right默认left
                                             "status":"0",
                                             "deviceCode":"000000000000",
-                                            "subTitle": "13663302288",
-
+                                            subTitle: "供应商",
+                                            subTitleColor:'#666666',
+                                            subTitleLocation:'right',
                                           placeholderImg: 'widget://res/img/config_icon5.png',
-                                          title: '艾雪瑞'
+                                          title: '艾雪瑞',
+                                          titleLocation:"center",
+                                          titleSize:"16"
+
 
                                                        //（可选项）cell的子标题，为空时title上下居中显示
 
@@ -172,29 +177,35 @@ searchBar:{
                                     "phoneBookVersion":"1",
                                     "status":"0",
                                     "deviceCode":"000000000000",
-                                    "subTitle": "13663302288",
+                                    "subTitle": "供应商",
+                                    subTitleColor:'#666666',
                                           placeholderImg: 'widget://res/img/config_icon6.png',
 
-                                          title: '安书奇'
+                                          title: '安书奇',
+                                          titleSize:"16"
                                   }, {
                                     "remark":"",
                                     "phoneNumbers":["13663302288","13586734565"],
                                     "phoneBookVersion":"1",
                                     "status":"0",
                                     "deviceCode":"000000000000",
-                                    "subTitle": "13663302288",
+                                    "subTitle": "客户",
+                                      subTitleColor:'#666666',
                                           placeholderImg: 'widget://res/img/config_icon8.png',
 
-                                          title: '安阳'
+                                          title: '安阳',
+                                          titleSize:"16"
                                   }, {
                                     "remark":"",
                                     "phoneNumbers":["13663302288","13586734565"],
                                     "phoneBookVersion":"1",
                                     "status":"0",
                                     "deviceCode":"000000000000",
-                                    "subTitle": "13663302288",
+                                    "subTitle": "供应商",
+                                    subTitleColor:'#666666',
                                           placeholderImg: 'widget://res/img/config_icon7.png',
-                                          title: '安莹'
+                                          title: '安莹',
+                                          titleSize:"16"
                                   }],
                                   B: [{
                                     "remark":"",
@@ -202,30 +213,36 @@ searchBar:{
                                     "phoneBookVersion":"1",
                                     "status":"0",
                                     "deviceCode":"000000000000",
-                                    "subTitle": "13663302288",
+                                    "subTitle": "客户",
+                                    subTitleColor:'#666666',
                                           placeholderImg: 'widget://res/img/config_icon9.png',
 
-                                          title: '白冰'
+                                          title: '白冰',
+                                          titleSize:"16"
                                   }, {
                                     "remark":"",
                                     "phoneNumbers":["13663302288","13586734565"],
                                     "phoneBookVersion":"1",
                                     "status":"0",
                                     "deviceCode":"000000000000",
-                                    "subTitle": "13663302288",
+                                    "subTitle": "客户",
+                                    subTitleColor:'#666666',
                                           placeholderImg: 'widget://res/img/config_icon10.png',
 
-                                          title: '白大超'
+                                          title: '白大超',
+                                          titleSize:"16"
                                   }, {
                                     "remark":"",
                                     "phoneNumbers":["13663302288","13586734565"],
                                     "phoneBookVersion":"1",
                                     "status":"0",
                                     "deviceCode":"000000000000",
-                                    "subTitle": "13663302288",
+                                    "subTitle": "供应商",
+                                    subTitleColor:'#666666',
                                           placeholderImg: 'widget://res/img/config_icon11.png',
 
-                                          title: '鲍峰雪'
+                                          title: '鲍峰雪',
+                                          titleSize:"16"
                                   }]
                           },
                           fixedOn: api.frameName,
