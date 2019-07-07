@@ -74,143 +74,133 @@
 <script type="text/javascript">
 
 
-    apiready = function(){
-     var header = $api.byId('header');
+apiready = function(){
+        var header = $api.byId('header');
         $api.fixStatusBar(header);
         var headerPos = $api.offset(header);
         var main = $api.byId('main');
         var mainPos = $api.offset(main);
         var name = api.pageParam.name;
         var title = api.pageParam.title;
-      var menus=$api.domAll('#header .btn_box pull-left1');
+        var menus=$api.domAll('#header .btn_box pull-left1');
+        var UIListView = api.require('UIListView');
 
+    UIListView.open({                     <!-- zaly9006 此处调用“UIListView”模块 -->
+        rect: {                          <!-- zaly9006 尺寸 -->
+             x: 0,
+             y: 70,
+             w: api.winWidth,
+             h: api.frameHeight-50
+        },
+        data: [{
+             uid: '1001',
+             imgPath: 'widget://res/img/config_icon1.png',
+             title: '刘德华',
+             subTitle: '老铁在吗？',
+             remark: '下午2:41',
+             icon: ''
+        }, {
+             uid: '1001',
+             imgPath: 'widget://res/img/config_icon2.png',
+             title: '张学友',
+             subTitle: '请问发货了没？',
+             remark: '下午2:41',
+             icon: ''
+        }, {
+             uid: '1001',
+             imgPath: 'widget://res/img/config_icon3.png',
+             title: '黎明',
+             subTitle: '合作愉快！',
+             remark: '下午2:41',
+             icon: ''
+        }, {
+             uid: '1001',
+             imgPath: 'widget://res/img/config_icon4.png',
+             title: '郭富城',
+             subTitle: '不见不散',
+             remark: '下午2:41',
+             icon: ''
+        }, {
+             uid: '1001',
+             imgPath: 'widget://res/img/config_icon5.png',
+             title: '艾雪瑞',
+             subTitle: '嗯，好的。',
+             remark: '下午2:41',
+             icon: ''
+        }, {
+             uid: '1001',
+             imgPath: 'widget://res/img/config_icon6.png',
+             title: '安书奇',
+             subTitle: '',
+             remark: '下午2:41',
+             icon: ''
+        }, {
+             uid: '1001',
+             imgPath: 'widget://res/img/config_icon7.png',
+             title: '安莹',
+             subTitle: '',
+             remark: '下午2:41',
+             icon: ''
+        }, {
+             uid: '1001',
+             imgPath: 'widget://res/img/config_icon8.png',
+             title: '安阳',
+             subTitle: '',
+             remark: '下午2:41',
+             icon: ''
+        }, {
+             uid: '1001',
+             imgPath: 'widget://res/img/config_icon9.png',
+             title: '白冰',
+             subTitle: '',
+             remark: '下午2:41',
+             icon: ''
+        }, {
+             uid: '1001',
+             imgPath: 'widget://res/img/config_icon10.png',
+             title: '白大超',
+             subTitle: '',
+             remark: '下午2:41',
+             icon: ''
+        }, {
+             imgPath: 'widget://res/img/config_icon11.png',
+             title: '鲍峰雪',
+             subTitle: '',
+             remark: '下午2:41',
+             icon: ''
+        }],
+        rightBtns: [{
+             bgColor: '#388e8e',
+             activeBgColor: '',
+             width: 70,
+             title: '删除',
+             titleSize: 12,
+             titleColor: '#fff',
+             icon: '',
+             iconWidth: 20
+        }],
+        styles: {
+             borderColor: '#696969',
+             item: {
+               bgColor: '#FFF',
+               activeBgColor: '#F5F5F5',
+               height: 60.0,
+               imgWidth: 40,
+               imgHeight: 40,
+               imgCorner: 10,
+               placeholderImg: '',
+               titleSize: 16.0,
+               titleColor: '#000',
+               subTitleSize: 12.0,
+               subTitleColor: '#666666',
+               remarkColor: '#666666',
+               remarkSize: 12,
+               remarkIconWidth: 30
+             }
+        },
+        fixedOn: api.frameName
+   });
+};
 
-      var UIListView = api.require('UIListView');
-UIListView.open({
-rect: {
-x: 0,
-y: 70,
-w: api.winWidth,
-h: api.frameHeight-50
-},
-searchBar:{
-      bgColor:  '#A1A1A1',           //（可选项）搜索条背景色，字符串，默认透明，支持 rgb，rgba，#
-      cancelColor: '#A1A1A1' ,    //（可选项）取消文字的颜色，字符串类型，默认#A1A1A1,支持 rgb，rgba，#
-      placeholder: '搜索联系人' ,    //（可选项）搜索条提示文字，字符串类型，默认空，不传则不显示提示文字
-      h: 44,          //（可选项）搜索框的高度，数字类型，默认44
-      textFieldBgColor: '#A1A1A1' //（可选项）搜索框文本区域的背景色，字符串类型，支持rgb、rgba、#
-  },
-data: [{
-uid: '1001',
-imgPath: 'widget://res/img/config_icon1.png',
-title: '刘德华',
-subTitle: '老铁在吗？',
-remark: '下午2:41',
-icon: ''
-}, {
-uid: '1001',
-imgPath: 'widget://res/img/config_icon2.png',
-title: '张学友',
-subTitle: '请问发货了没？',
-remark: '下午2:41',
-icon: ''
-}, {
-uid: '1001',
-imgPath: 'widget://res/img/config_icon3.png',
-title: '黎明',
-subTitle: '合作愉快！',
-remark: '下午2:41',
-icon: ''
-}, {
-uid: '1001',
-imgPath: 'widget://res/img/config_icon4.png',
-title: '郭富城',
-subTitle: '不见不散',
-remark: '下午2:41',
-icon: ''
-}, {
-uid: '1001',
-imgPath: 'widget://res/img/config_icon5.png',
-title: '艾雪瑞',
-subTitle: '嗯，好的。',
-remark: '下午2:41',
-icon: ''
-}, {
-uid: '1001',
-imgPath: 'widget://res/img/config_icon6.png',
-title: '安书奇',
-subTitle: '',
-remark: '下午2:41',
-icon: ''
-}, {
-uid: '1001',
-imgPath: 'widget://res/img/config_icon7.png',
-title: '安莹',
-subTitle: '',
-remark: '下午2:41',
-icon: ''
-}, {
-uid: '1001',
-imgPath: 'widget://res/img/config_icon8.png',
-title: '安阳',
-subTitle: '',
-remark: '下午2:41',
-icon: ''
-}, {
-uid: '1001',
-imgPath: 'widget://res/img/config_icon9.png',
-title: '白冰',
-subTitle: '',
-remark: '下午2:41',
-icon: ''
-}, {
-uid: '1001',
-imgPath: 'widget://res/img/config_icon10.png',
-title: '白大超',
-subTitle: '',
-remark: '下午2:41',
-icon: ''
-}, {
-imgPath: 'widget://res/img/config_icon11.png',
-title: '鲍峰雪',
-subTitle: '',
-remark: '下午2:41',
-icon: ''
-}],
-rightBtns: [{
-bgColor: '#388e8e',
-activeBgColor: '',
-width: 70,
-title: '删除',
-titleSize: 12,
-titleColor: '#fff',
-icon: '',
-iconWidth: 20
-}],
-styles: {
-borderColor: '#696969',
-item: {
-bgColor: '#FFF',
-activeBgColor: '#F5F5F5',
-height: 60.0,
-imgWidth: 40,
-imgHeight: 40,
-imgCorner: 10,
-placeholderImg: '',
-titleSize: 16.0,
-titleColor: '#000',
-subTitleSize: 12.0,
-subTitleColor: '#666666',
-remarkColor: '#666666',
-remarkSize: 12,
-remarkIconWidth: 30
-}
-},
-fixedOn: api.frameName
-}, );
-
-               };
 </script>
-
-
 </html>

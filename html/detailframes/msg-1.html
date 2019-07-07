@@ -102,164 +102,143 @@ var jumpToFun1 = function(index){
         name: 'header1',
         index: index,
         scroll: true
-        });
+    });
     navBarBar.style.webkitTransform = 'translateX('+index*170+'%)';
-    }
+}
 
     apiready = function(){
-     var header = $api.byId('header');
+        var header = $api.byId('header');
         $api.fixStatusBar(header);
         var headerPos = $api.offset(header);
         var main = $api.byId('main');
         var mainPos = $api.offset(main);
         var name = api.pageParam.name;
         var title = api.pageParam.title;
-
         var listContact = api.require('listContact');
-        listContact.open({
+        listContact.open({              <!-- zaly9006 此处调用“listContact”模块 -->
           x : 0,
-     y : 70,
-     w : api.frameWidth,
-     h : api.frameHeight - 50,
+          y : 70,
+          w : api.frameWidth,
+          h : api.frameHeight - 50,
+          cellBgColor:'#FFF',
+          indicator: {
+             color: '#A1A1A1',
+             title: '备注'
+          },
+          searchBar:{
+             bgColor:  '#A1A1A1',           //（可选项）搜索条背景色，字符串，默认透明，支持 rgb，rgba，#
+             cancelColor: '#A1A1A1' ,    //（可选项）取消文字的颜色，字符串类型，默认#A1A1A1,支持 rgb，rgba，#
+             placeholder: '搜索联系人' ,    //（可选项）搜索条提示文字，字符串类型，默认空，不传则不显示提示文字
+             h: 44,          //（可选项）搜索框的高度，数字类型，默认44
+             textFieldBgColor: '#A1A1A1' //（可选项）搜索框文本区域的背景色，字符串类型，支持rgb、rgba、#
+          },
 
+          rightBtn: [{
+             color: '#8B0000',
+             title: '删除'
 
-  cellBgColor:'#FFF',
-  indicator: {
-        color: '#A1A1A1',
-        title: '备注'
-
-  },
-searchBar:{
-      bgColor:  '#A1A1A1',           //（可选项）搜索条背景色，字符串，默认透明，支持 rgb，rgba，#
-      cancelColor: '#A1A1A1' ,    //（可选项）取消文字的颜色，字符串类型，默认#A1A1A1,支持 rgb，rgba，#
-      placeholder: '搜索联系人' ,    //（可选项）搜索条提示文字，字符串类型，默认空，不传则不显示提示文字
-      h: 44,          //（可选项）搜索框的高度，数字类型，默认44
-      textFieldBgColor: '#A1A1A1' //（可选项）搜索框文本区域的背景色，字符串类型，支持rgb、rgba、#
-  },
-
-                            rightBtn: [{
-                                  color: '#8B0000',
-                                  title: '删除'
-
-                          }],
-                          data: {
-                                  common: [{
-                                    placeholderImg: 'widget://res/img/ic/listContact.png',
+          }],
+          data: {
+            common: [{
+              placeholderImg: 'widget://res/img/ic/listContact.png',
               img: 'widget://res/img/config_icon12.png',
               title: '群聊',
               titleSize : 16,
-               titleLocation: 'center'
-
-                                  }],
-                                  A: [{
-                                    "id":"1",
-                                          //  "phoneName":"张笑",
-                                            "remark":"",
-                                            "phoneNumbers":["13663302288","13586734565"],
-                                            "phoneBookVersion":"1",
-                                                       //（可选项）子标题在水平线上的位置center,left,right默认left
-                                            "status":"0",
-                                            "deviceCode":"000000000000",
-                                            subTitle: "供应商",
-                                            subTitleColor:'#666666',
-                                            subTitleLocation:'right',
-                                          placeholderImg: 'widget://res/img/config_icon5.png',
-                                          title: '艾雪瑞',
-                                          titleLocation:"center",
-                                          titleSize:"16"
-
-
-                                                       //（可选项）cell的子标题，为空时title上下居中显示
-
-                                  }, {
-                                    "remark":"",
-                                    "phoneNumbers":["13663302288","13586734565"],
-                                    "phoneBookVersion":"1",
-                                    "status":"0",
-                                    "deviceCode":"000000000000",
-                                    "subTitle": "供应商",
-                                    subTitleColor:'#666666',
-                                          placeholderImg: 'widget://res/img/config_icon6.png',
-
-                                          title: '安书奇',
-                                          titleSize:"16"
-                                  }, {
-                                    "remark":"",
-                                    "phoneNumbers":["13663302288","13586734565"],
-                                    "phoneBookVersion":"1",
-                                    "status":"0",
-                                    "deviceCode":"000000000000",
-                                    "subTitle": "客户",
-                                      subTitleColor:'#666666',
-                                          placeholderImg: 'widget://res/img/config_icon8.png',
-
-                                          title: '安阳',
-                                          titleSize:"16"
-                                  }, {
-                                    "remark":"",
-                                    "phoneNumbers":["13663302288","13586734565"],
-                                    "phoneBookVersion":"1",
-                                    "status":"0",
-                                    "deviceCode":"000000000000",
-                                    "subTitle": "供应商",
-                                    subTitleColor:'#666666',
-                                          placeholderImg: 'widget://res/img/config_icon7.png',
-                                          title: '安莹',
-                                          titleSize:"16"
-                                  }],
-                                  B: [{
-                                    "remark":"",
-                                    "phoneNumbers":["13663302288","13586734565"],
-                                    "phoneBookVersion":"1",
-                                    "status":"0",
-                                    "deviceCode":"000000000000",
-                                    "subTitle": "客户",
-                                    subTitleColor:'#666666',
-                                          placeholderImg: 'widget://res/img/config_icon9.png',
-
-                                          title: '白冰',
-                                          titleSize:"16"
-                                  }, {
-                                    "remark":"",
-                                    "phoneNumbers":["13663302288","13586734565"],
-                                    "phoneBookVersion":"1",
-                                    "status":"0",
-                                    "deviceCode":"000000000000",
-                                    "subTitle": "客户",
-                                    subTitleColor:'#666666',
-                                          placeholderImg: 'widget://res/img/config_icon10.png',
-
-                                          title: '白大超',
-                                          titleSize:"16"
-                                  }, {
-                                    "remark":"",
-                                    "phoneNumbers":["13663302288","13586734565"],
-                                    "phoneBookVersion":"1",
-                                    "status":"0",
-                                    "deviceCode":"000000000000",
-                                    "subTitle": "供应商",
-                                    subTitleColor:'#666666',
-                                          placeholderImg: 'widget://res/img/config_icon11.png',
-
-                                          title: '鲍峰雪',
-                                          titleSize:"16"
-                                  }]
-                          },
-                          fixedOn: api.frameName,
-                          fixed: true
-                  }, function(ret, err) {
-                          if (ret) {
-                                  alert("111" + JSON.stringify(ret));
-
-                          } else {
-                                  alert(JSON.stringify(err));
-                          }
-                  });
-
-
-
-
-    }
+              titleLocation: 'center'
+            }],
+            A: [{
+              "id":"1",
+              "remark":"",
+              "phoneNumbers":["13663302288","13586734565"],
+              "phoneBookVersion":"1",
+              "status":"0",
+              "deviceCode":"000000000000",
+              subTitle: "供应商",
+              subTitleColor:'#666666',
+              subTitleLocation:'right',
+              placeholderImg: 'widget://res/img/config_icon5.png',
+              title: '艾雪瑞',
+              titleLocation:"center",
+              titleSize:"16"
+           }, {
+              "remark":"",
+              "phoneNumbers":["13663302288","13586734565"],
+              "phoneBookVersion":"1",
+              "status":"0",
+              "deviceCode":"000000000000",
+              "subTitle": "供应商",
+              subTitleColor:'#666666',
+              placeholderImg: 'widget://res/img/config_icon6.png',
+              title: '安书奇',
+              titleSize:"16"
+          }, {
+              "remark":"",
+              "phoneNumbers":["13663302288","13586734565"],
+              "phoneBookVersion":"1",
+              "status":"0",
+              "deviceCode":"000000000000",
+              "subTitle": "客户",
+              subTitleColor:'#666666',
+              placeholderImg: 'widget://res/img/config_icon8.png',
+              title: '安阳',
+              titleSize:"16"
+          }, {
+              "remark":"",
+              "phoneNumbers":["13663302288","13586734565"],
+              "phoneBookVersion":"1",
+              "status":"0",
+              "deviceCode":"000000000000",
+              "subTitle": "供应商",
+              subTitleColor:'#666666',
+              placeholderImg: 'widget://res/img/config_icon7.png',
+              title: '安莹',
+              titleSize:"16"
+          }],
+          B: [{
+              "remark":"",
+              "phoneNumbers":["13663302288","13586734565"],
+              "phoneBookVersion":"1",
+              "status":"0",
+              "deviceCode":"000000000000",
+              "subTitle": "客户",
+              subTitleColor:'#666666',
+              placeholderImg: 'widget://res/img/config_icon9.png',
+              title: '白冰',
+              titleSize:"16"
+          }, {
+              "remark":"",
+              "phoneNumbers":["13663302288","13586734565"],
+              "phoneBookVersion":"1",
+              "status":"0",
+              "deviceCode":"000000000000",
+              "subTitle": "客户",
+              subTitleColor:'#666666',
+              placeholderImg: 'widget://res/img/config_icon10.png',
+              title: '白大超',
+              titleSize:"16"
+          }, {
+              "remark":"",
+              "phoneNumbers":["13663302288","13586734565"],
+              "phoneBookVersion":"1",
+              "status":"0",
+              "deviceCode":"000000000000",
+              "subTitle": "供应商",
+              subTitleColor:'#666666',
+              placeholderImg: 'widget://res/img/config_icon11.png',
+              title: '鲍峰雪',
+              titleSize:"16"
+          }]
+       },
+       fixedOn: api.frameName,
+       fixed: true
+     }, function(ret, err) {
+                  if (ret) {
+                        alert("111" + JSON.stringify(ret));
+                  } else {
+                        alert(JSON.stringify(err));
+                  }
+          }
+     )};
 
 </script>
 
